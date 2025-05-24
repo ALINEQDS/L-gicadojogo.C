@@ -1,0 +1,71 @@
+#include <stdio.h>
+
+int main() {
+    char nome1[30], nome2[30];
+    int forca1, forca2;
+    int velocidade1, velocidade2;
+    int opcao;
+
+    printf("=== CADASTRO DA CARTA 1 ===\n");
+    printf("Nome da carta: ");
+    scanf("%s", nome1);
+    printf("Forca: ");
+    scanf("%d", &forca1);
+    printf("Velocidade: ");
+    scanf("%d", &velocidade1);
+
+    printf("\n=== CADASTRO DA CARTA 2 ===\n");
+    printf("Nome da carta: ");
+    scanf("%s", nome2);
+    printf("Forca: ");
+    scanf("%d", &forca2);
+    printf("Velocidade: ");
+    scanf("%d", &velocidade2);
+
+    printf("\n=== MENU DE COMPARACAO ===\n");
+    printf("1 - Comparar Forca\n");
+    printf("2 - Comparar Velocidade\n");
+    printf("3 - Comparar Ambos\n");
+    printf("Escolha uma opcao: ");
+    scanf("%d", &opcao);
+
+    if (opcao == 1) {
+        if (forca1 > forca2) {
+            printf("\n%s venceu pela Forca!\n", nome1);
+        } else if (forca2 > forca1) {
+            printf("\n%s venceu pela Forca!\n", nome2);
+        } else {
+            printf("\nEmpate na Forca!\n");
+        }
+    } else if (opcao == 2) {
+        if (velocidade1 > velocidade2) {
+            printf("\n%s venceu pela Velocidade!\n", nome1);
+        } else if (velocidade2 > velocidade1) {
+            printf("\n%s venceu pela Velocidade!\n", nome2);
+        } else {
+            printf("\nEmpate na Velocidade!\n");
+        }
+    } else if (opcao == 3) {
+        printf("\nComparando Forca: ");
+        if (forca1 > forca2) {
+            printf("%s venceu\n", nome1);
+        } else if (forca2 > forca1) {
+            printf("%s venceu\n", nome2);
+        } else {
+            printf("Empate\n");
+        }
+
+        printf("Comparando Velocidade: ");
+        if (velocidade1 > velocidade2) {
+            printf("%s venceu\n", nome1);
+        } else if (velocidade2 > velocidade1) {
+            printf("%s venceu\n", nome2);
+        } else {
+            printf("Empate\n");
+        }
+    } else {
+        printf("\nOpcao invalida!\n");
+    }
+
+    return 0;
+}
